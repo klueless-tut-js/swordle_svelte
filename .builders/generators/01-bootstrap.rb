@@ -81,9 +81,9 @@ KManager.action :bootstrap do
 
         cd(:app)
         
-        run_template_script('.runonce/git-setup.sh', dom: dom)
+        # run_template_script('.runonce/git-setup.sh', dom: dom)
 
-        add('.gitignore')
+        # add('.gitignore')
 
         # add('.githooks/commit-msg')
         # add('.githooks/pre-commit')
@@ -92,7 +92,7 @@ KManager.action :bootstrap do
         # run_command('chmod +x .githooks/pre-commit')
 
         # run_command('git config core.hooksPath .githooks') # enable sharable githooks (developer needs to turn this on before editing rep)
-        # run_command("git add .; git commit -m 'chore: #{self.options.description.downcase}'; git push")
+        run_command("git add .; git commit -m 'chore: #{self.options.description.downcase}'; git push")
       end
       # .blueprint(
       #   name: :ci_cd,
